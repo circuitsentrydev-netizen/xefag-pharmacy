@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
@@ -32,32 +32,14 @@ export default function HomeScreen() {
           <View style={styles.purchaseCard}>
             <ProductDetails />
 
-            <View style={styles.divider} />
-
             <DurationSelector />
 
             <View style={styles.purchaseBottom}>
               <QuantitySelector />
-
-              <View style={styles.priceContainer}>
-                <Text style={styles.priceLabel}>TOTAL PRICE</Text>
-                <Text style={styles.price}>$25.50</Text>
-              </View>
             </View>
 
             <BuyButton />
-
-            <Text style={styles.secure}>
-              ✓ Secure shopping experience
-            </Text>
           </View>
-
-          <View style={styles.benefits}>
-            <Text style={styles.benefit}>✦ QUALITY WELLNESS</Text>
-            <Text style={styles.benefit}>♡ MADE FOR YOU</Text>
-          </View>
-
-          <Text style={styles.footer}>XEFAG PHARMACY</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -72,7 +54,7 @@ const styles = StyleSheet.create({
   scroll: {
     flexGrow: 1,
     paddingTop: 8,
-    paddingBottom: 35,
+    paddingBottom: 24,
   },
   container: {
     width: '100%',
@@ -88,58 +70,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
   },
-  divider: {
-    height: 1,
-    backgroundColor: COLORS.border,
-    marginVertical: 20,
-  },
   purchaseBottom: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-  },
-  priceContainer: {
-    alignItems: 'flex-end',
-  },
-  priceLabel: {
-    color: COLORS.muted,
-    fontSize: 9,
-    fontWeight: '900',
-    letterSpacing: 1,
-    marginBottom: 6,
-  },
-  price: {
-    color: COLORS.navy,
-    fontSize: 23,
-    fontWeight: '900',
-  },
-  secure: {
-    color: COLORS.muted,
-    fontSize: 10,
-    textAlign: 'center',
-    marginTop: 13,
-  },
-  benefits: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginTop: 25,
-    paddingVertical: 18,
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: COLORS.border,
-  },
-  benefit: {
-    color: COLORS.green,
-    fontSize: 9,
-    fontWeight: '900',
-    letterSpacing: 1,
-  },
-  footer: {
-    color: COLORS.muted,
-    textAlign: 'center',
-    fontSize: 9,
-    fontWeight: '900',
-    letterSpacing: 3,
-    marginTop: 24,
+    marginTop: 12,
   },
 });
