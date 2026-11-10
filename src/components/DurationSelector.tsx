@@ -8,8 +8,6 @@ const durations = ['30 MIN', '60 MIN', '90 MIN'];
 export default function DurationSelector() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Choose your duration</Text>
-
       <View style={styles.row}>
         {durations.map((duration, index) => (
           <HoverButton
@@ -18,7 +16,11 @@ export default function DurationSelector() {
               styles.button,
               index === 0 && styles.selected,
             ]}
-            hoverStyle={styles.hover}
+            hoverStyle={
+              index === 0
+                ? styles.selectedHover
+                : styles.hover
+            }
           >
             <Text
               style={[
@@ -37,41 +39,46 @@ export default function DurationSelector() {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
-  },
-  title: {
-    color: COLORS.navy,
-    fontSize: 14,
-    fontWeight: '900',
-    marginBottom: 12,
+    width: '100%',
+    alignItems: 'center',
+    marginVertical: 12,
   },
   row: {
+    width: '100%',
     flexDirection: 'row',
-    gap: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 12,
   },
   button: {
     flex: 1,
-    paddingVertical: 14,
-    borderRadius: 11,
-    borderWidth: 1,
-    borderColor: COLORS.border,
+    minHeight: 48,
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: 14,
   },
-  hover: {
+  selected: {
     backgroundColor: COLORS.yellow,
     borderColor: COLORS.yellow,
   },
-  selected: {
-    backgroundColor: COLORS.navy,
-    borderColor: COLORS.navy,
+  hover: {
+    backgroundColor: COLORS.paleYellow,
+    borderColor: COLORS.yellow,
+  },
+  selectedHover: {
+    backgroundColor: '#E9B936',
+    borderColor: '#E9B936',
   },
   buttonText: {
     color: COLORS.navy,
-    fontSize: 11,
-    fontWeight: '900',
+    fontSize: 13,
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
   selectedText: {
-    color: COLORS.white,
+    color: COLORS.navy,
   },
 });
