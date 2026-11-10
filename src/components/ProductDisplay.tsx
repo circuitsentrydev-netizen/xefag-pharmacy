@@ -15,11 +15,8 @@ function ProductBottle() {
           <Text style={styles.brand}>XEFAG</Text>
           <View style={styles.labelLine} />
           <Text style={styles.product}>RELAX 30</Text>
-          <Text style={styles.labelDescription}>WELLNESS FORMULA</Text>
         </View>
       </View>
-
-      <Text style={styles.caption}>YOUR MOMENT OF CALM</Text>
     </View>
   );
 }
@@ -28,11 +25,9 @@ export default function ProductDisplay() {
   return (
     <View style={styles.display}>
       <View style={styles.topRow}>
-        <Text style={styles.collection}>WELLNESS COLLECTION</Text>
+        <View />
         <Text style={styles.heart}>♡</Text>
       </View>
-
-      <Text style={styles.title}>Relax. Recharge. Restore.</Text>
 
       <ProductBottle />
     </View>
@@ -48,25 +43,12 @@ const styles = StyleSheet.create({
   },
   topRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
-  },
-  collection: {
-    color: COLORS.green,
-    fontSize: 10,
-    fontWeight: '900',
-    letterSpacing: 2,
   },
   heart: {
     color: COLORS.navy,
     fontSize: 25,
-  },
-  title: {
-    color: COLORS.navy,
-    fontSize: 23,
-    fontWeight: '900',
-    textAlign: 'center',
-    marginTop: 15,
   },
   bottleArea: {
     height: 265,
@@ -138,18 +120,5 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '900',
     letterSpacing: 1,
-  },
-  labelDescription: {
-    color: '#DCE7ED',
-    fontSize: 7,
-    letterSpacing: 1,
-    marginTop: 5,
-  },
-  caption: {
-    color: COLORS.green,
-    fontSize: 9,
-    fontWeight: '900',
-    letterSpacing: 2,
-    marginTop: 12,
   },
 });

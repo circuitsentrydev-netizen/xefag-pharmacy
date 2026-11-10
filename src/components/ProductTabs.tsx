@@ -6,11 +6,17 @@ import { COLORS } from '@/constants/xefag';
 export default function ProductTabs() {
   return (
     <View style={styles.tabs}>
-      <HoverButton style={styles.activeTab} hoverStyle={styles.tabHover}>
+      <HoverButton
+        style={styles.activeTab}
+        hoverStyle={styles.activeTabHover}
+      >
         <Text style={styles.activeText}>RELAX</Text>
       </HoverButton>
 
-      <HoverButton style={styles.inactiveTab} hoverStyle={styles.tabHover}>
+      <HoverButton
+        style={styles.inactiveTab}
+        hoverStyle={styles.inactiveTabHover}
+      >
         <Text style={styles.inactiveText}>SLEEP</Text>
       </HoverButton>
     </View>
@@ -38,7 +44,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
   },
-  tabHover: {
+  activeTabHover: {
+    backgroundColor: COLORS.navy,
+  },
+  inactiveTabHover: {
     backgroundColor: COLORS.yellow,
   },
   activeText: {

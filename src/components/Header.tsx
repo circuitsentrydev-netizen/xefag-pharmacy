@@ -6,15 +6,16 @@ import { COLORS } from '@/constants/xefag';
 export default function Header() {
   return (
     <View style={styles.header}>
-      <HoverButton style={styles.button} hoverStyle={styles.buttonHover}>
+      <HoverButton
+        style={styles.button}
+        hoverStyle={styles.buttonHover}
+      >
         <Text style={styles.icon}>☰</Text>
       </HoverButton>
 
       <Text style={styles.logo}>XEFAG</Text>
 
-      <HoverButton style={styles.button} hoverStyle={styles.buttonHover}>
-        <Text style={styles.icon}>♧</Text>
-      </HoverButton>
+      <View style={styles.rightSpace} />
     </View>
   );
 }
@@ -46,5 +47,9 @@ const styles = StyleSheet.create({
   icon: {
     color: COLORS.navy,
     fontSize: 22,
+  },
+  rightSpace: {
+    width: 42,
+    height: 42,
   },
 });
