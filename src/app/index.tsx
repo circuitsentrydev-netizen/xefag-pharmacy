@@ -63,17 +63,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#BAD9EC',
   },
+
   scroll: {
     flexGrow: 1,
     paddingTop: 12,
     paddingBottom: 24,
   },
+
   container: {
     width: '100%',
     maxWidth: 480,
     alignSelf: 'center',
     paddingHorizontal: 12,
   },
+
   hero: {
     minHeight: 510,
     backgroundColor: '#F6B110',
@@ -83,22 +86,26 @@ const styles = StyleSheet.create({
     paddingBottom: 75,
     overflow: 'visible',
   },
+
   heroContent: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginTop: 18,
   },
+
   productArea: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   durationArea: {
     width: 48,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
+
   purchaseCard: {
     backgroundColor: '#FFFFFF',
     borderRadius: 34,
@@ -110,6 +117,7 @@ const styles = StyleSheet.create({
     zIndex: 2,
     elevation: 8,
   },
+
   purchaseBottom: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -117,13 +125,15 @@ const styles = StyleSheet.create({
     marginTop: 18,
     marginBottom: 12,
   },
+
   priceContainer: {
     flex: 1,
   },
+
   price: {
     color: '#111111',
     fontSize: 30,
     fontWeight: '700',
     letterSpacing: -1,
   },
-})
+});

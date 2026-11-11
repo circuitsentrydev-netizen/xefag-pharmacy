@@ -36,6 +36,7 @@ export default function DurationSelector() {
 
 const styles = StyleSheet.create({
   container: {
+    bottom: 140,
     width: 48,
     alignItems: 'center',
     justifyContent: 'center',
