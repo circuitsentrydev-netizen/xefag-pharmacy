@@ -1,23 +1,42 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 import HoverButton from './HoverButton';
-import { COLORS } from '@/constants/xefag';
+
+function RelaxIcon() {
+  return (
+    <View style={styles.relaxIcon}>
+      <View style={styles.relaxInner} />
+      <View style={styles.relaxDot} />
+    </View>
+  );
+}
+
+function SleepIcon() {
+  return (
+    <View style={styles.moonContainer}>
+      <View style={styles.moon} />
+      <View style={styles.moonCutout} />
+    </View>
+  );
+}
 
 export default function ProductTabs() {
   return (
     <View style={styles.tabs}>
       <HoverButton
-        style={styles.activeTab}
-        hoverStyle={styles.activeTabHover}
+        style={styles.tab}
+        hoverStyle={styles.tabHover}
       >
-        <Text style={styles.activeText}>RELAX</Text>
+        <RelaxIcon />
+        <Text style={styles.activeText}>Relax</Text>
       </HoverButton>
 
       <HoverButton
-        style={styles.inactiveTab}
-        hoverStyle={styles.inactiveTabHover}
+        style={styles.tab}
+        hoverStyle={styles.tabHover}
       >
-        <Text style={styles.inactiveText}>SLEEP</Text>
+        <SleepIcon />
+        <Text style={styles.inactiveText}>Sleep</Text>
       </HoverButton>
     </View>
   );
@@ -26,40 +45,78 @@ export default function ProductTabs() {
 const styles = StyleSheet.create({
   tabs: {
     flexDirection: 'row',
-    backgroundColor: '#DCE5EA',
-    padding: 5,
-    borderRadius: 14,
-    marginBottom: 17,
-  },
-  activeTab: {
-    flex: 1,
-    paddingVertical: 12,
-    backgroundColor: COLORS.navy,
-    borderRadius: 10,
     alignItems: 'center',
+    justifyContent: 'flex-start',
+    gap: 32,
+    marginTop: 15,
+    marginBottom: 12,
+    paddingHorizontal: 2,
   },
-  inactiveTab: {
-    flex: 1,
-    paddingVertical: 12,
-    borderRadius: 10,
+  tab: {
+    flexDirection: 'row',
     alignItems: 'center',
+    gap: 7,
+    paddingVertical: 5,
+    paddingHorizontal: 2,
+    borderRadius: 10,
   },
-  activeTabHover: {
-    backgroundColor: COLORS.navy,
-  },
-  inactiveTabHover: {
-    backgroundColor: COLORS.yellow,
+  tabHover: {
+    backgroundColor: 'rgba(255,255,255,0.18)',
   },
   activeText: {
-    color: COLORS.white,
-    fontWeight: '900',
-    fontSize: 12,
-    letterSpacing: 2,
+    color: '#171717',
+    fontSize: 13,
+    fontWeight: '500',
   },
   inactiveText: {
-    color: COLORS.navy,
-    fontWeight: '800',
-    fontSize: 12,
-    letterSpacing: 2,
+    color: '#8E751F',
+    fontSize: 13,
+    fontWeight: '500',
+  },
+  relaxIcon: {
+    width: 17,
+    height: 17,
+    borderWidth: 1.4,
+    borderColor: '#171717',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  relaxInner: {
+    width: 7,
+    height: 7,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#171717',
+  },
+  relaxDot: {
+    position: 'absolute',
+    width: 3,
+    height: 3,
+    borderRadius: 2,
+    backgroundColor: '#171717',
+    top: 2,
+    right: 2,
+  },
+  moonContainer: {
+    width: 17,
+    height: 17,
+    position: 'relative',
+  },
+  moon: {
+    width: 15,
+    height: 15,
+    borderRadius: 9,
+    borderWidth: 1.3,
+    borderColor: '#8E751F',
+  },
+  moonCutout: {
+    position: 'absolute',
+    width: 12,
+    height: 13,
+    borderRadius: 8,
+    backgroundColor: '#F6B110',
+    top: -2,
+    right: -2,
   },
 });
