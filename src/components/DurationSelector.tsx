@@ -1,84 +1,75 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 import HoverButton from './HoverButton';
-import { COLORS } from '@/constants/xefag';
 
-const durations = ['30 MIN', '60 MIN', '90 MIN'];
+const durations = ['30', '60', '90'];
 
 export default function DurationSelector() {
   return (
     <View style={styles.container}>
-      <View style={styles.row}>
-        {durations.map((duration, index) => (
+      {durations.map((duration, index) => {
+        const selected = index === 0;
+
+        return (
           <HoverButton
             key={duration}
             style={[
               styles.button,
-              index === 0 && styles.selected,
+              selected ? styles.selected : styles.unselected,
             ]}
-            hoverStyle={
-              index === 0
-                ? styles.selectedHover
-                : styles.hover
-            }
+            hoverStyle={selected ? styles.selectedHover : styles.hover}
           >
             <Text
               style={[
                 styles.buttonText,
-                index === 0 && styles.selectedText,
+                selected ? styles.selectedText : styles.unselectedText,
               ]}
             >
               {duration}
             </Text>
           </HoverButton>
-        ))}
-      </View>
+        );
+      })}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: 48,
     alignItems: 'center',
-    marginVertical: 12,
-  },
-  row: {
-    width: '100%',
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    gap: 12,
+    gap: 10,
   },
   button: {
-    flex: 1,
-    minHeight: 48,
-    justifyContent: 'center',
+    width: 36,
+    height: 36,
+    borderRadius: 20,
     alignItems: 'center',
-    backgroundColor: COLORS.white,
-    borderWidth: 1,
-    borderColor: COLORS.border,
-    borderRadius: 14,
+    justifyContent: 'center',
   },
   selected: {
-    backgroundColor: COLORS.yellow,
-    borderColor: COLORS.yellow,
+    backgroundColor: '#171717',
   },
-  hover: {
-    backgroundColor: COLORS.paleYellow,
-    borderColor: COLORS.yellow,
+  unselected: {
+    backgroundColor: '#D6A51F',
   },
   selectedHover: {
-    backgroundColor: '#E9B936',
-    borderColor: '#E9B936',
+    backgroundColor: '#333333',
+    transform: [{ scale: 1.06 }],
+  },
+  hover: {
+    backgroundColor: '#E8BD48',
+    transform: [{ scale: 1.06 }],
   },
   buttonText: {
-    color: COLORS.navy,
-    fontSize: 13,
-    fontWeight: '700',
-    letterSpacing: 0.5,
+    fontSize: 16,
+    fontWeight: '500',
   },
   selectedText: {
-    color: COLORS.navy,
+    color: '#F8C52B',
+  },
+  unselectedText: {
+    color: '#F8E39A',
   },
 });
