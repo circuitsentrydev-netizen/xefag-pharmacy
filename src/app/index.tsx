@@ -1,5 +1,5 @@
 
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
@@ -23,18 +23,30 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scroll}
       >
         <View style={styles.container}>
-          <Header />
+          <View style={styles.hero}>
+            <Header />
 
-          <ProductTabs />
+            <ProductTabs />
 
-          <ProductDisplay />
+            <View style={styles.heroContent}>
+              <View style={styles.productArea}>
+                <ProductDisplay />
+              </View>
+
+              <View style={styles.durationArea}>
+                <DurationSelector />
+              </View>
+            </View>
+          </View>
 
           <View style={styles.purchaseCard}>
             <ProductDetails />
 
-            <DurationSelector />
-
             <View style={styles.purchaseBottom}>
+              <View style={styles.priceContainer}>
+                <Text style={styles.price}>$25.50</Text>
+              </View>
+
               <QuantitySelector />
             </View>
 
@@ -49,31 +61,69 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: '#BAD9EC',
   },
   scroll: {
     flexGrow: 1,
-    paddingTop: 8,
+    paddingTop: 12,
     paddingBottom: 24,
   },
   container: {
     width: '100%',
     maxWidth: 480,
     alignSelf: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 12,
+  },
+  hero: {
+    minHeight: 510,
+    backgroundColor: '#F6B110',
+    borderRadius: 42,
+    paddingTop: 22,
+    paddingHorizontal: 18,
+    paddingBottom: 75,
+    overflow: 'visible',
+  },
+  heroContent: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 18,
+  },
+  productArea: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  durationArea: {
+    width: 48,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   purchaseCard: {
-    backgroundColor: COLORS.white,
-    borderRadius: 24,
-    padding: 20,
-    marginTop: 18,
-    borderWidth: 1,
-    borderColor: COLORS.border,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 34,
+    paddingHorizontal: 24,
+    paddingTop: 25,
+    paddingBottom: 24,
+    marginTop: -55,
+    marginHorizontal: 6,
+    zIndex: 2,
+    elevation: 8,
   },
   purchaseBottom: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop: 12,
+    justifyContent: 'space-between',
+    marginTop: 18,
+    marginBottom: 12,
   },
-});
+  priceContainer: {
+    flex: 1,
+  },
+  price: {
+    color: '#111111',
+    fontSize: 30,
+    fontWeight: '700',
+    letterSpacing: -1,
+  },
+})
