@@ -36,12 +36,13 @@ export default function DurationSelector() {
 
 const styles = StyleSheet.create({
   container: {
-    bottom: 140,
+    top: 8,
     width: 48,
     alignItems: 'center',
     justifyContent: 'center',
     gap: 10,
   },
+
   button: {
     width: 36,
     height: 36,
@@ -49,27 +50,34 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   selected: {
     backgroundColor: '#171717',
   },
+
   unselected: {
     backgroundColor: '#D6A51F',
   },
+
   selectedHover: {
     backgroundColor: '#333333',
     transform: [{ scale: 1.06 }],
   },
+
   hover: {
     backgroundColor: '#E8BD48',
     transform: [{ scale: 1.06 }],
   },
+
   buttonText: {
     fontSize: 16,
     fontWeight: '500',
   },
+
   selectedText: {
     color: '#F8C52B',
   },
+
   unselectedText: {
     color: '#F8E39A',
   },
