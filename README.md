@@ -1,56 +1,141 @@
-# Welcome to your Expo app 👋
+# 💊 Xefag Pharmacy Mobile Application
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, user-friendly mobile pharmacy application built with React Native and Expo. Xefag Pharmacy provides a clean and intuitive shopping experience, allowing users to explore pharmacy products, view product information, select product durations, adjust quantities, and proceed to the purchasing interface.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Key Features
+
+* **Product Display:** Clean product presentation with dedicated product images.
+* **Product Information:** Displays product details in an organised layout.
+* **Duration Selection:** Allows users to select their preferred product duration.
+* **Quantity Selection:** Interactive quantity selector for product orders.
+* **Shopping Interface:** Includes a dedicated purchasing button.
+* **Reusable Components:** Built with modular React Native components.
+* **Responsive Design:** Designed to provide a consistent mobile experience.
+
+---
+
+## 🛠️ Built With
+
+* **Framework:** React Native
+* **Development Platform:** Expo
+* **Programming Language:** TypeScript
+* **Navigation:** Expo Router
+* **Styling:** React Native StyleSheet
+* **Development Tools:** Node.js and npm
+
+---
+
+## 🏁 Getting Started
+
+Follow these steps to set up the application locally on your machine.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+* [Node.js](https://nodejs.org/)
+* [Expo Go](https://expo.dev/go) (for testing on a physical mobile device)
+* npm (included with Node.js)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/circuitsentrydev-netizen/xefag-pharmacy.git
+   cd xefag-pharmacy
+   ```
+
+2. **Install project dependencies:**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Start the Expo development server:**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Run the application:**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   * Scan the QR code using Expo Go.
+   * Press `a` to launch on an Android emulator.
+   * Press `i` to launch on an iOS simulator (macOS required).
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📁 Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+xefag-pharmacy/
+│
+├── app/
+│   ├── index.tsx
+│   └── _layout.tsx
+│
+├── components/
+│   ├── Header.tsx
+│   ├── ProductTabs.tsx
+│   ├── ProductDisplay.tsx
+│   ├── ProductDetails.tsx
+│   ├── DurationSelector.tsx
+│   ├── QuantitySelector.tsx
+│   └── BuyButton.tsx
+│
+├── assets/
+│   └── images/
+│
+├── package.json
+└── README.md
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+---
 
-### Other setup steps
+## 🧩 Application Components
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Product Display
+* Displays the selected pharmacy product.
+* Uses product images stored in the assets directory.
+* Maintains image proportions within the display area.
 
-## Learn more
+### Duration Selector
+* Provides an interactive product duration selection interface.
 
-To learn more about developing your project with Expo, look at the following resources:
+### Quantity Selector
+* Allows users to adjust the quantity of the selected product.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Product Details
+* Presents relevant product information.
 
-## Join the community
+### Buy Button
+* Provides the purchasing interface for selected products.
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## ▶️ Development
+
+To start working on the application, open the project in your preferred code editor and modify the components inside the `app` and `components` directories.
+
+Run the following command whenever you want to start the development server:
+
+```bash
+npx expo start
+```
+
+---
+
+## 👨‍💻 Author
+
+**CircuitSentry Dev**
+
+GitHub: [circuitsentrydev-netizen](https://github.com/circuitsentrydev-netizen)
+
+Project Repository: [Xefag Pharmacy](https://github.com/circuitsentrydev-netizen/xefag-pharmacy)
+
+---
+
+*Built with React Native and Expo.*
