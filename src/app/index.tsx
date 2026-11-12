@@ -1,4 +1,3 @@
-
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -24,13 +23,15 @@ export default function HomeScreen() {
       >
         <View style={styles.container}>
           <View style={styles.hero}>
+            {/* Full-bleed background product image */}
+            <ProductDisplay />
+
             <Header />
 
-            <ProductTabs />
-
-            <View style={styles.heroContent}>
-              <View style={styles.productArea}>
-                <ProductDisplay />
+            {/* Top control row: ProductTabs on left, DurationSelector on right */}
+            <View style={styles.topControlsRow}>
+              <View style={styles.tabsArea}>
+                <ProductTabs />
               </View>
 
               <View style={styles.durationArea}>
@@ -78,26 +79,26 @@ const styles = StyleSheet.create({
   },
 
   hero: {
+    position: 'relative',
     minHeight: 510,
     backgroundColor: '#F6B110',
     borderRadius: 42,
     paddingTop: 22,
     paddingHorizontal: 18,
     paddingBottom: 75,
-    overflow: 'visible',
+    overflow: 'hidden',
   },
 
-  heroContent: {
-    flex: 1,
+  topControlsRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+    justifyContent: 'space-between',
     marginTop: 18,
   },
 
-  productArea: {
+  tabsArea: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 4, // Fine-tunes vertical alignment with the top '30' circle
   },
 
   durationArea: {
