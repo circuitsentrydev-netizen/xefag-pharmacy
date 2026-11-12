@@ -1,13 +1,12 @@
-
 import { StyleSheet, View, Image } from 'react-native';
 
 export default function ProductDisplay() {
   return (
-    <View style={styles.display}>
+    <View style={styles.display} pointerEvents="none">
       <Image
-        source={require('../assets/images/relax-bottle.png')}
+        source={require('../../assets/images/relax-bottle.png')}
         style={styles.productImage}
-        resizeMode="contain"
+        resizeMode="cover"
       />
     </View>
   );
@@ -15,14 +14,12 @@ export default function ProductDisplay() {
 
 const styles = StyleSheet.create({
   display: {
-    width: '100%',
+    ...StyleSheet.absoluteFill,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'transparent',
   },
-
   productImage: {
-    width: 260,
-    height: 390,
+    width: '100%',
+    height: '100%',
   },
 });
